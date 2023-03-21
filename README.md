@@ -20,28 +20,28 @@ SUBMIT YOUR ANSWER WITH SCREENSHOT AND REPOSITORY LINK
 
 
 
---------------------------------notes------------------------------------- <br/>
+--------------------------------discusstion notes------------------------------------- <br/>
 TO INSTALL AND RUN
 
-npm install .
-ionic serve
-ionic start
-use wizard? - No
-select react
-create project name
-choose desired base template
-create free ionic - No
--once the project is create
--go to your project folder
--type ionic serve
+npm install .  <br/>
+ionic serve <br/>
+ionic start <br/>
+use wizard? - No <br/>
+select react <br/>
+create project name <br/>
+choose desired base template <br/>
+create free ionic - No <br/>
+-once the project is create <br/>
+-go to your project folder <br/> 
+-type ionic serve <br/>
 
 
 
-get the input value while typing
- onChange={
-          function HandleInput (e) {
-            console.log(e.target.value)
-          }
+get the input value while typing <br/>
+ onChange={ <br/>
+          function HandleInput (e) { <br/>
+            console.log(e.target.value) <br/>
+          } <br/>
         }
 
 
