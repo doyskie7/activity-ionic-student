@@ -1,0 +1,7 @@
+{
+  "name": "input-lesson",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
