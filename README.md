@@ -20,7 +20,7 @@ SUBMIT YOUR ANSWER WITH SCREENSHOT AND REPOSITORY LINK
 
 
 
---------------------------------notes-------------------------------------
+--------------------------------notes------------------------------------- <br/>
 TO INSTALL AND RUN
 
 npm install .
