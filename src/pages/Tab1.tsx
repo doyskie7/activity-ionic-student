@@ -1,30 +1,33 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
-import {HeyPage} from "../components/Hey"
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton } from '@ionic/react';
 import './Tab1.css';
-import { useState,useEffect } from 'react';
-
+import { useState } from 'react';
+import axios from "axios"
 const Tab1: React.FC = () => {
 
  
-  const [Name,SetName] = useState("")
+  const [userDetails,setUserDetails] = useState({
+    name:"",
+    email:"",
+    gender: "",
+  })
 
-  // useEffect(()=>{
-  //   console.log(Name)
-  // },[Name])
+  function SubmitButton (e:any){
+    e.preventDefault();
 
-
-  // [] fires only once
-  //
-
-  function Submit (){
-    console.log(Name)
+    axios.post("http://localhost:4000/api/node-end-point",{userDetails}).then((response)=>{
+      console.log("response---->", response.data)
+      alert("API SUCCESSFULLY PASSED")
+    }).catch((error)=>{
+      console.log("response---->", error)
+      alert("API ERROR")
+    })
+      
   }
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Tab 1</IonTitle>
+          <IonTitle>NODE BACKEND</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
@@ -33,19 +36,29 @@ const Tab1: React.FC = () => {
             <IonTitle size="large">INPUTS IN IONIC MOBILE APP</IonTitle>
           </IonToolbar>
         </IonHeader>
+        <br/> <br/> <br/> <br/>
+
+        <form onSubmit={SubmitButton}>
+        <label>Name</label>
+        <input type="text" className='input-field' onChange={(e)=>{setUserDetails({
+          ...userDetails,
+          name:e.target.value
+        })}}/>
         
-        <HeyPage/>
+        <label>Email</label>
+        <input type="text" className='input-field' onChange={(e)=>{setUserDetails({
+          ...userDetails,
+          email:e.target.value
+        })}}/>
+        
+        <label>Gender</label>
+        <input type="text" className='input-field' onChange={(e)=>{setUserDetails({
+          ...userDetails,
+          gender:e.target.value
+        })}}/>
 
-
-        <input type="text" className='input-field' onChange={(e)=>{SetName(e.target.value)}}/>
-
-
-        <button type='button' onClick={Submit}> SUBMIT</button>
-
-
-
-        {/* <ExploreContainer name="Tab 1 page" /> */}
-
+        <IonButton type='submit'> SUBMIT</IonButton>
+        </form>
 
       </IonContent>
     </IonPage>
